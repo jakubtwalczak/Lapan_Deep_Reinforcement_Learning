@@ -1,4 +1,5 @@
 # Lapan_Deep_Reinforcement_Learning
+![image](https://github.com/user-attachments/assets/3aaf5fb8-638f-49ee-a423-46151fab8363)
 
 Repository with a code from the book "Deep Reinforcement Learning" written by M. Lapan.
 
