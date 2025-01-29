@@ -152,7 +152,7 @@ if __name__ == '__main__': # przygotowanie modeli i pętli treningowej
     device = torch.device("cuda" if args.cuda else "cpu")
     envs = [ # pula środowisk przy użyciu zdefiniowanego wrappera
         InputWrapper(gym.make(name))
-        for name in ("ALE/Breakout-v5", "ALE/Pong-v5")
+        for name in ('Breakout-v0', 'AirRaid-v0', 'Pong-v0')
     ]
     input_shape = envs[0].observation_space.shape
 
