@@ -17,7 +17,8 @@ class Agent:  # klasa przechowująca tabele i zawierająca funkcje z pętli tren
 
     def reset_env(self):
         state, _ = self.env.reset()
-        return state if isinstance(state, int) else state[0]  # Zapewniamy, że `state` to int
+        return state if isinstance(state, int) else state[0]  # Zapewniamy, że "state" to int
+        # jest to dostosowanie do outputu metody "reset()", która zwraca krotkę
 
     def play_n_random_steps(self, count):  # funkcja do zbierania losowego doświadczenia ze środowiska
         for _ in range(count):
@@ -47,10 +48,10 @@ class Agent:  # klasa przechowująca tabele i zawierająca funkcje z pętli tren
         # do podjęcia decyzji o wyborze najlepszej akcji
         best_action, best_value = None, None
         for action in range(self.env.action_space.n):
-            action_value = self.calc_action_value(state, action)
+            action_value = self.calc_action_value(state, action) # wygrywa akcja o najwyższej wartości
             if best_value is None or best_value < action_value:
                 best_value = action_value
-                best_action = action # wygrywa akcja o najwyższej wartości
+                best_action = action
                 # jest to proces deterministyczny; funkcja przeprowadza eksplorację
                 # agent postępuje więc zachłannie
         return best_action
